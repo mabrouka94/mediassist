@@ -10,4 +10,10 @@
     <string name="screen3desc">YouTube live streaming allows you to reach your community in real time.
     Go live on YouTube from webcam, mobile and encoder streaming.</string>
     <string name="startDesc">Prenez vos médicaments à l’heure pour rester en bonne santé.</string>
+    <string name="prochains_v_nements">Prochains Événements</string>
+    <string name="select_picture">Sélectionner une image</string>
+    <string name="name_required">Le nom est requis</string>
+    <string name="phone_required">Le numéro de téléphone est requis</string>
+    <string name="invalid_phone">Numéro de téléphone invalide</string>
+    <string name="image_load_error">Erreur lors du chargement de l\'image</string>
 </resources>
