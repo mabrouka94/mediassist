@@ -25,6 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
 
             </intent-filter>
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+                tools:ignore="WrongManifestParent" />
 
         </activity>
         <activity android:name=".PageMedicaments" />
@@ -33,6 +35,8 @@
             android:parentActivityName=".EmergencyContactActivity">
 
         </activity>
+        <activity android:name=".PrescriptionActive" />
+
     </application>
 
 </manifest>
