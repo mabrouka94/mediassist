@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -10,15 +11,34 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Titre -->
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- Barre de titre avec flèche -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Medication"
-            android:textSize="24sp"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <!-- Flèche de retour -->
+            <ImageButton
+                android:id="@+id/back_arrow_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:contentDescription="Back"
+                app:tint="#000000" />
+
+            <!-- Titre -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Medication"
+                android:textSize="24sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
 
         <!-- Nom du médicament -->
         <EditText

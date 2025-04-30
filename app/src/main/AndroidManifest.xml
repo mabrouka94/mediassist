@@ -27,6 +27,8 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".PageMedicaments" />
+
         <activity android:name=".AddEmergencyContactActivity"
             android:parentActivityName=".EmergencyContactActivity">
 

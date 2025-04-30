@@ -5,28 +5,27 @@
     android:background="#FFFFFF">
 
     <!-- Barre de recherche -->
-    <EditText
-        android:id="@+id/search_medications"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Search medications..."
-        android:padding="12dp"
-        android:background="@drawable/edittext_border"
-        android:layout_margin="16dp" />
 
     <!-- Liste des médicaments -->
 
     <!-- Bouton Ajouter -->
 
-    <ListView
-        android:id="@+id/medications_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/search_medications"
+
+    <EditText
+        android:id="@+id/search_medications"
+        android:layout_width="332dp"
+        android:layout_height="105dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="-62dp"
-        android:layout_marginEnd="-33dp"
-        android:padding="16dp" />
+        android:layout_marginStart="0.1dp"
+        android:layout_marginLeft="0.1dp"
+        android:layout_marginTop="0.1dp"
+        android:layout_marginEnd="0.1dp"
+        android:layout_marginRight="0.1dp"
+        android:layout_marginBottom="0.1dp"
+        android:background="@drawable/iconrecherche"
+        android:hint="Search medications..."
+        android:padding="12dp" />
 
     <Button
         android:id="@+id/add_medication_button"
