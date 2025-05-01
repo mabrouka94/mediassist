@@ -96,6 +96,17 @@
                     android:layout_marginTop="8dp"
                     android:layout_gravity="center"/>
 
+                <!-- ImageView ajoutée pour afficher l’image sélectionnée -->
+                <ImageView
+                    android:id="@+id/contactImageView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:contentDescription="Photo du contact" />
+
                 <Button
                     android:id="@+id/addContactButton"
                     android:layout_width="match_parent"

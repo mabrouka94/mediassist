@@ -30,6 +30,10 @@
 
         </activity>
         <activity android:name=".PageMedicaments" />
+        <activity
+            android:name=".NotificationsActivity"
+            android:label="Notifications"
+            android:theme="@style/Theme.MediAssist.NoActionBar"/>
 
         <activity android:name=".AddEmergencyContactActivity"
             android:parentActivityName=".EmergencyContactActivity">

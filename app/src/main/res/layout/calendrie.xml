@@ -37,29 +37,34 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Sous-titre -->
+
+    <!-- Liste des événements -->
+
     <TextView
         android:id="@+id/nextEventsTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:layout_marginTop="80dp"
         android:text="@string/prochains_v_nements"
-        android:textSize="20sp"
         android:textColor="#000000"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/calendarView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/calendarView" />
 
-    <!-- Liste des événements -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/eventsRecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="228dp"
+        android:layout_height="275dp"
         android:layout_margin="16dp"
-        tools:listitem="@layout/item_event"
-        app:layout_constraintTop_toBottomOf="@id/nextEventsTitle"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/nextEventsTitle"
+        app:layout_constraintVertical_bias="0.235"
+        tools:listitem="@layout/item_event" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,4 +16,7 @@
     <string name="phone_required">Le numéro de téléphone est requis</string>
     <string name="invalid_phone">Numéro de téléphone invalide</string>
     <string name="image_load_error">Erreur lors du chargement de l\'image</string>
+    <string name="medication_image_desc">Image du médicament</string>
+    <string name="complete">Compléter</string>
+    <string name="skip">Ignorer</string>
 </resources>

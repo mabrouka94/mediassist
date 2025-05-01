@@ -56,4 +56,8 @@ public class MedicationDatabaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
+
+    public void markAsRead(int id) {
+
+    }
 }

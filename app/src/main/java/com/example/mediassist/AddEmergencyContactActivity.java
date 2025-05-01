@@ -11,15 +11,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import java.io.IOException;
 
 public class AddEmergencyContactActivity extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 101;
+
     private EditText nameEditText, phoneEditText;
     private Button uploadImageButton, addContactButton;
     private ImageView contactImageView;
@@ -50,7 +53,7 @@ public class AddEmergencyContactActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
-            getSupportActionBar().setTitle(""); // Supprime le titre par défaut
+            getSupportActionBar().setTitle(""); // Titre vide
         }
     }
 
@@ -62,7 +65,7 @@ public class AddEmergencyContactActivity extends AppCompatActivity {
     private void openImagePicker() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         intent.setType("image/*");
-        startActivityForResult(Intent.createChooser(intent, getString(R.string.select_picture)), PICK_IMAGE_REQUEST);
+        startActivityForResult(Intent.createChooser(intent, "Sélectionner une image"), PICK_IMAGE_REQUEST);
     }
 
     @Override
@@ -76,7 +79,7 @@ public class AddEmergencyContactActivity extends AppCompatActivity {
                 contactImageView.setImageBitmap(bitmap);
                 contactImageView.setVisibility(View.VISIBLE);
             } catch (IOException e) {
-                showToast(getString(R.string.image_load_error));
+                Toast.makeText(this, "Erreur lors du chargement de l'image", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
         }
@@ -86,26 +89,24 @@ public class AddEmergencyContactActivity extends AppCompatActivity {
         String name = nameEditText.getText().toString().trim();
         String phone = phoneEditText.getText().toString().trim();
 
-        if (!isInputValid(name, phone)) {
-            return;
-        }
+        if (!isInputValid(name, phone)) return;
 
         saveContact(name, phone);
     }
 
     private boolean isInputValid(String name, String phone) {
         if (name.isEmpty()) {
-            nameEditText.setError(getString(R.string.name_required));
+            nameEditText.setError("Le nom est requis");
             return false;
         }
 
         if (phone.isEmpty()) {
-            phoneEditText.setError(getString(R.string.phone_required));
+            phoneEditText.setError("Le numéro est requis");
             return false;
         }
 
         if (!isValidPhoneNumber(phone)) {
-            phoneEditText.setError(getString(R.string.invalid_phone));
+            phoneEditText.setError("Numéro invalide (8 à 15 chiffres)");
             return false;
         }
 
@@ -113,7 +114,7 @@ public class AddEmergencyContactActivity extends AppCompatActivity {
     }
 
     private boolean isValidPhoneNumber(String phone) {
-        return phone.matches("^[0-9]{8,15}$");
+        return phone.matches("^\\+?[0-9]{8,15}$");
     }
 
     private void saveContact(String name, String phone) {
@@ -123,14 +124,14 @@ public class AddEmergencyContactActivity extends AppCompatActivity {
 
         if (imageUri != null) {
             resultIntent.putExtra("contact_image_uri", imageUri.toString());
+        } else {
+            // Optionnel : passer une image par défaut si tu le souhaites
+            // resultIntent.putExtra("contact_image_uri", "default_uri_here");
         }
 
+        Toast.makeText(this, "Contact ajouté avec succès", Toast.LENGTH_SHORT).show();
         setResult(RESULT_OK, resultIntent);
         finish();
-    }
-
-    private void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
